@@ -22,11 +22,13 @@ func main() {
 	var corrected_salary float32  = start_salary
 	var real_salary float32  = start_salary
 	var infl_rt float32 = 0
-	//var start_year int = 2010
+	var start_year int = 2010
+	var current_year int = start_year
 	for i :=0; i < 14; i++ {
 		infl_rt = inflation_rate[i]/100
-		corrected_salary = corrected_salary + corrected_salary * infl_rt 
+		corrected_salary = corrected_salary + corrected_salary * infl_rt		
+		current_year = current_year + 1 
 		real_salary =  real_salary - start_salary * infl_rt
-		fmt.Println(corrected_salary, ":", real_salary)
+		fmt.Println("YEAR: ", current_year, corrected_salary, ":", real_salary)
 	}
 }
